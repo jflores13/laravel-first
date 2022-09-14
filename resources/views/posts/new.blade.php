@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Add New Post</title>
-  <link rel="stylesheet" href="/app.css">
-</head>
-<body>
+@extends('layout', ['title' => 'Create Post'])
+
+@section('content')
   <h1>Add New Post</h1>
   <form method="POST" action="/posts" class="form">
     @csrf
@@ -16,5 +9,4 @@
     <button type="submit">Save Post</button>
   </form>
   <a href="/posts">Back to All Posts</a>
-</body>
-</html>
+@endsection

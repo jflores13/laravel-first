@@ -25,4 +25,4 @@ Route::post('users', [UsersController::class, 'store']);
 Route::get('posts', [PostsController::class, 'index']);
 Route::get('posts/new', [PostsController::class, 'addNew']);
 Route::post('posts', [PostsController::class, 'store']);
-Route::get('posts/{id}', [PostsController::class, 'viewPost'])->name('posts.viewpost');
+Route::get('posts/{id}', [PostsController::class, 'viewPost'])->name('posts.viewpost')->whereNumber('id');

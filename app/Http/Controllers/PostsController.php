@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
@@ -22,7 +21,12 @@ class PostsController extends Controller
         return back();
     }
     public function viewPost ($id) {
-        $post = DB::table('posts')->where('id', $id)->first();
+        // $post = DB::table('posts')->where('id', $id)->first();
+        $post = Post::find($id);
+        if(! $post) {
+            abort(404);
+            // return redirect('/posts');
+        }
         return view('posts.post', compact('post'));
     }
 }
